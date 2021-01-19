@@ -155,7 +155,7 @@ def get_not_duplicated_three_digit_number():
     ran = ""
     while(1):
         ran = str(get_random_number())
-        if(is_between_100_and_999(ran) and not is_duplicated_number(ran)):
+        if(not is_duplicated_number(ran)):
             break
     result = int(ran)
     # ==================================
@@ -200,7 +200,6 @@ def get_strikes_or_ball(user_input_number, random_number):
                 ball += 1
     # ==================================
     result = strikes, ball
-    print(result)
     return result
 
 
@@ -282,10 +281,7 @@ def main():
         if(not regame): break
         random_number = str(get_not_duplicated_three_digit_number())
         print("Random Number is : ", random_number)
-        again = True
         while(1):
-            if(not again):
-                break
             user_input = input('Input guess number : ')
             if(is_validated_number(user_input)):
                 s, b = get_strikes_or_ball(user_input, random_number)
