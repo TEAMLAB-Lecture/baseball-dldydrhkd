@@ -295,7 +295,7 @@ def main():
             else:
                 print("Wrong Input, Input again")
         while(1):
-            user_ans = input("You win, one more(Y/N)?")
+            user_ans = input('You win, one more(Y/N) ?')
             if(is_yes(user_ans)):
                 regame = True
                 break
