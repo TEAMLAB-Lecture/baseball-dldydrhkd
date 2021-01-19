@@ -283,6 +283,9 @@ def main():
         print("Random Number is : ", random_number)
         while(1):
             user_input = input('Input guess number : ')
+            if(user_input == '0'):
+                regame = False
+                break
             if(is_validated_number(user_input)):
                 s, b = get_strikes_or_ball(user_input, random_number)
                 print(f"Strikes : {s} , Balls : {b}")
@@ -290,8 +293,12 @@ def main():
                     break
             else:
                 print("Wrong Input, Input again")
+        if(not regame): break
         while(1):
-            user_ans = input('You win, one more(Y/N) ?')
+            user_ans = input('You win, one more(Y/N)?')
+            if(user_ans == '0'):
+                regame = False
+                break
             if(is_yes(user_ans)):
                 regame = True
                 break
